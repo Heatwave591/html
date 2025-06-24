@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAE Badminton Player: Janani's Journey to Success</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbar for smooth slide transitions */
+            background-color: #f0f4f8; /* Light grey/blue background */
+        }
+        .slide-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100vw;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+        .slide {
+            background-color: #ffffff; /* White background for slides */
+            border-radius: 1.5rem; /* Rounded corners for slides */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 2rem 3rem;
+            margin: 1rem;
+            max-width: 90%;
+            width: 100%;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: absolute; /* Position slides absolutely for stacking */
+            opacity: 0; /* Hide all slides by default */
+            transform: translateX(100%); /* Start off-screen to the right */
+            transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+            overflow-y: auto; /* Allow scrolling for content that overflows */
+        }
+        .slide.active {
+            opacity: 1; /* Show active slide */
+            transform: translateX(0); /* Bring active slide to center */
+            position: relative; /* Take up space in flow */
+        }
+        .slide.previous {
+            transform: translateX(-100%); /* Move previous slide off-screen to the left */
+            opacity: 0;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #1a202c; /* Dark charcoal */
+        }
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #2b6cb0; /* Professional blue */
+        }
+        .gold-text {
+            color: #d69e2e; /* Gold accent for achievements */
+        }
+        .accent-blue {
+            color: #3182ce; /* Lighter blue accent */
+        }
+        .bg-gradient-blue {
+            background: linear-gradient(to right, #3182ce, #63b3ed); /* Blue gradient */
+        }
+        .btn {
+            background-color: #4299e1; /* Blue button */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #3182ce;
+        }
+        .nav-buttons {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 1.5rem;
+                max-width: 95%;
+                min-height: 80vh;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .text-xl {
+                font-size: 1.1rem;
+            }
+            .grid-cols-2 {
+                grid-template-columns: 1fr; /* Stack columns on small screens */
+            }
+        }
+
+        .icon-small {
+            font-size: 1.2rem;
+            color: #3182ce;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container" id="presentation-container">
+
+        <div class="slide" data-slide-index="0">
+            <h1 class="text-5xl font-extrabold mb-4 text-center">Beyond the Net: A Champion's Journey</h1>
+            <h2 class="text-3xl font-semibold mb-8 accent-blue text-center">Showcasing the Achievements of a UAE Badminton Star</h2>
+            <p class="text-4xl font-bold mb-4 text-center">Janani</p>
+            <p class="text-2xl text-gray-700 text-center">Representing: United Arab Emirates</p>
+            <div class="mt-8 relative w-full h-64 md:h-96 overflow-hidden rounded-lg">
+                <img src="http://drive.google.com/uc?export=download&id=1HK6mN_hO1dPA9vpPNYBlWByICX3tkwnM">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50 rounded-lg"></div>
+                <div class="absolute bottom-4 left-4 flex items-center text-white text-lg">
+                    <i class="fas fa-flag mr-2"></i> UAE
+                </div>
+                <div class="absolute top-4 right-4 text-white text-lg">
+                    <i class="fas fa-shuttlecock"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="1">
+            <h2 class="text-4xl font-bold mb-8 accent-blue">About Me - The Player Profile</h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 w-full max-w-4xl">
+                <div class="flex-shrink-0">
+                    <img src="https://raw.githubusercontent.com/Heatwave591/html/main/images/3.jpg">
+                </div>
+                <div class="text-left flex-grow">
+                    <ul class="list-none space-y-4 text-xl text-gray-800">
+                        <li><i class="fas fa-calendar-alt icon-small"></i> **Date of Birth:** 20th February 2003</li>
+                        <li><i class="fas fa-globe-americas icon-small"></i> **Highest International Ranking:** 124</li>
+                        <li><i class="fas fa-flag icon-small"></i> **Representing:** United Arab Emirates (Previously India)</li>
+                        <li><i class="fas fa-clock icon-small"></i> **Years Active:** Continuously from 2015 - Present (Professional since 2017)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="2">
+            <h2 class="text-4xl font-bold mb-8 accent-blue">Early Career Highlights (2018 - 2021)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left w-full max-w-5xl">
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">2018</h3>
+                    <ul class="list-none space-y-2 text-lg text-gray-700">
+                        <li><i class="fas fa-trophy icon-small"></i> Under 17 National Championship GS Runner-up</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">2019</h3>
+                    <ul class="list-none space-y-2 text-lg text-gray-700">
+                        <li><i class="fas fa-trophy icon-small"></i> Under 17 GD <span class="gold-text font-bold">Winner</span> (Imphal & Guwahati National Tournament)</li>
+                        <li><i class="fas fa-medal icon-small"></i> Under 17 XD <span class="text-amber-700 font-bold">Bronze</span> (Guwahati National Tournament)</li>
+                        <li><i class="fas fa-plane icon-small"></i> Represented India in Asian Badminton Championship</li>
+                        <li><i class="fas fa-medal icon-small"></i> Won <span class="gold-text font-bold">Gold</span> in National Badminton Championship U17 XD</li>
+                        <li><i class="fas fa-users icon-small"></i> <span class="gold-text font-bold">Gold</span> in Team Event in SGFI</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">2020</h3>
+                    <ul class="list-none space-y-2 text-lg text-gray-700">
+                        <li><i class="fas fa-medal icon-small"></i> Won <span class="text-amber-700 font-bold">Bronze</span> WS in Khelo India Youth Games</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">2021</h3>
+                    <ul class="list-none space-y-2 text-lg text-gray-700">
+                        <li><i class="fas fa-medal icon-small"></i> <span class="text-amber-700 font-bold">Bronze</span> medal in WS, <span class="text-gray-400 font-bold">Silver</span> in XD (U19 State Seniors Championship)</li>
+                        <li><i class="fas fa-trophy icon-small"></i> South Zone Inter University <span class="gold-text font-bold">Champion</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="3">
+            <h2 class="text-4xl font-bold mb-8 accent-blue">Dominance in 2022</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left w-full max-w-5xl">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <ul class="list-none space-y-3 text-lg text-gray-800">
+                        <li><i class="fas fa-medal icon-small"></i> Won <span class="gold-text font-bold">Gold</span> in Women's Singles & Mixed Doubles (Level Up State Ranking Badminton Tournament)</li>
+                        <li><i class="fas fa-users icon-small"></i> Won <span class="gold-text font-bold">Gold</span> in South Zone Team Championships</li>
+                        <li><i class="fas fa-medal icon-small"></i> Won <span class="gold-text font-bold">Gold</span> in Mixed Doubles Event (South Zone Championships)</li>
+                        <li><i class="fas fa-mask icon-small"></i> Represented Bengaluru Lions as an Icon Player (GPBL)</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-100 p-6 rounded-lg shadow-md border-l-4 border-blue-400">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">Key Achievements</h3>
+                    <ul class="list-none space-y-3 text-xl text-gray-800">
+                        <li><i class="fas fa-medal icon-small"></i> Won <span class="text-amber-700 font-bold">Bronze</span> in South Zone Inter University Championship</li>
+                        <li class="font-bold text-2xl text-green-700"><i class="fas fa-star icon-small"></i> Khelo India University Champions 2022: <span class="gold-text">GOLD</span></li>
+                        <li class="font-bold text-2xl text-green-700"><i class="fas fa-star icon-small"></i> All India University Champions 2022: <span class="gold-text">GOLD</span></li>
+                    </ul>
+                    <div class="mt-6 flex justify-center">
+                        <img src="https://storage.googleapis.com/context-artifacts/uploaded:WhatsApp%20Image%202025-06-24%20at%2010.47.00%20(1).jpeg-4c3111f6-a979-43c2-bf72-1eb199ef1e2e" alt="Janani in action" class="rounded-lg shadow-lg max-w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="4">
+            <h2 class="text-4xl font-bold mb-8 accent-blue">Continued Success & International Presence (2023)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left w-full max-w-5xl">
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">National & University</h3>
+                    <ul class="list-none space-y-3 text-lg text-gray-700">
+                        <li><i class="fas fa-medal icon-small"></i> <span class="text-amber-700 font-bold">Bronze</span> in All India University (Represented Jain University)</li>
+                        <li><i class="fas fa-medal icon-small"></i> <span class="text-gray-400 font-bold">Silver</span> in Khelo India University Games</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">International & Major Tournaments</h3>
+                    <ul class="list-none space-y-3 text-lg text-gray-700">
+                        <li><i class="fas fa-trophy icon-small"></i> Quarterfinalist in St. Denis Reunion Open</li>
+                        <li><i class="fas fa-trophy icon-small"></i> Pre-Quarterfinalist in Super 300 (Lucknow - Singles)</li>
+                        <li><i class="fas fa-trophy icon-small"></i> Pre-Quarterfinalist in Super 100 (Odisha Open - Mixed Doubles)</li>
+                        <li><i class="fas fa-trophy icon-small"></i> Quarterfinalist in Bahrain International Challenge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="5">
+            <h2 class="text-4xl font-bold mb-8 accent-blue">Recent Triumphs & Looking Forward (2024 - 2025)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left w-full max-w-5xl">
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">2024 Highlights</h3>
+                    <ul class="list-none space-y-3 text-lg text-gray-800">
+                        <li><i class="fas fa-crown icon-small"></i> <span class="font-bold text-green-700">Winner</span> in South Zone Championship</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">2025 Achievements</h3>
+                    <ul class="list-none space-y-3 text-lg text-gray-800">
+                        <li><i class="fas fa-medal icon-small"></i> **ISC Open:**
+                            <ul class="list-disc ml-6">
+                                <li><span class="gold-text font-bold">Gold</span> in Mixed Doubles</li>
+                                <li><span class="text-gray-400 font-bold">Silver</span> in Women's Singles</li>
+                                <li><span class="text-amber-700 font-bold">Bronze</span> in Women's Doubles</li>
+                            </ul>
+                        </li>
+                        <li><i class="fas fa-medal icon-small"></i> **India Open:**
+                            <ul class="list-disc ml-6">
+                                <li><span class="text-gray-400 font-bold">Silver</span> in Women's Singles</li>
+                                <li><span class="text-gray-400 font-bold">Silver</span> in Women's Doubles</li>
+                            </ul>
+                        </li>
+                        <li><i class="fas fa-medal icon-small"></i> <span class="text-amber-700 font-bold">Bronze</span> in Malta Future Series</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="6">
+            <h2 class="text-4xl font-bold mb-8 accent-blue">Goals for This Year</h2>
+            <div class="flex flex-col gap-6 w-full max-w-4xl text-left">
+                <div class="p-6 bg-blue-50 rounded-lg shadow-md border-l-4 border-blue-400">
+                    <h3 class="text-2xl font-bold mb-2 text-blue-700">Primary Objective:</h3>
+                    <p class="text-xl text-gray-800"><i class="fas fa-bullseye icon-small"></i> To break into the <span class="font-bold gold-text">Top 50</span> in the World Rankings.</p>
+                </div>
+                <div class="p-6 bg-green-50 rounded-lg shadow-md border-l-4 border-green-400">
+                    <h3 class="text-2xl font-bold mb-2 text-green-700">Personal Drive:</h3>
+                    <ul class="list-none space-y-2 text-xl text-gray-800">
+                        <li><i class="fas fa-fire icon-small"></i> To play my best in every match.</li>
+                        <li><i class="fas fa-dumbbell icon-small"></i> To push myself to extreme measures in training and competition.</li>
+                        <li><i class="fas fa-chart-line icon-small"></i> To continuously improve and grow in my passion for badminton.</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-yellow-50 rounded-lg shadow-md border-l-4 border-yellow-400">
+                    <h3 class="text-2xl font-bold mb-2 text-yellow-700">National Pride:</h3>
+                    <p class="text-xl text-gray-800"><i class="fas fa-flag icon-small"></i> While enjoying my sport, I aim to secure medals for my country (UAE) and achieve my personal goals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="7">
+            <h2 class="text-4xl font-bold mb-8 accent-blue">Strategic Tournament Focus</h2>
+            <div class="flex flex-col items-center w-full max-w-4xl text-left">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">Super Series Tournaments:</h3>
+                <div class="relative flex flex-col items-center mb-8 w-full">
+                    <div class="bg-blue-600 text-white p-4 rounded-lg w-3/4 md:w-1/2 mb-4 text-center shadow-lg"><i class="fas fa-star icon-small text-white"></i> 1 x Super 500 Tournament</div>
+                    <div class="bg-blue-500 text-white p-4 rounded-lg w-4/5 md:w-2/3 mb-4 text-center shadow-lg"><i class="fas fa-star icon-small text-white"></i> 2 x Super 300 Tournaments</div>
+                    <div class="bg-blue-400 text-white p-4 rounded-lg w-full md:w-3/4 text-center shadow-lg"><i class="fas fa-star icon-small text-white"></i> 2 x Super 100 Tournaments</div>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">Additional Focus:</h3>
+                <p class="text-xl text-gray-800"><i class="fas fa-globe-americas icon-small"></i> Other significant international tournaments on the calendar to maximize ranking points and experience.</p>
+            </div>
+        </div>
+
+        <div class="slide" data-slide-index="8">
+            <h2 class="text-4xl font-bold mb-8 accent-blue text-center">Thank You for Your Time!</h2>
+            <div class="flex flex-col items-center gap-6 w-full max-w-md">
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-gray-800 mb-2">Janani</p>
+                    <p class="text-xl text-gray-600">Professional Badminton Player, UAE</p>
+                </div>
+                <div class="w-full bg-blue-50 p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-2xl font-bold mb-4 accent-blue">Let's Connect:</h3>
+                    <ul class="list-none space-y-3 text-xl text-gray-800">
+                        <li><i class="fas fa-envelope icon-small"></i> [ananthakumar.janani@gmail.com]</li>
+                        <li><i class="fab fa-instagram icon-small"></i> [ananthakumar.janani]</li>
+                    </ul>
+                    <div class="mt-8">
+                        <button class="btn bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-6 text-xl rounded-full shadow-lg transition-all duration-300">
+                            Partner with Janani!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prevBtn" class="btn"><i class="fas fa-chevron-left"></i> Previous</button>
+        <button id="nextBtn" class="btn">Next <i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            // Remove active and previous classes from all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'previous');
+            });
+
+            // Add active class to the current slide
+            slides[index].classList.add('active');
+
+            // Optionally, add 'previous' class to the slide that was just left
+            // This is for transition effects if you want a slide-out animation
+            if (index > currentSlide) { // Moving forward
+                   // No special class needed for the slide leaving to the left in this simple model
+            } else if (index < currentSlide) { // Moving backward
+                   // No special class needed for the slide leaving to the right in this simple model
+            }
+
+            // Update currentSlide index
+            currentSlide = index;
+
+            // Disable/enable buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === slides.length - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+        // Initialize presentation on load
+        window.onload = function() {
+            showSlide(0);
+        };
+    </script>
+</body>
+</html>
